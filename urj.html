@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urjotsav</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="video">
+        <video muted autoplay loop id="videoBG" style="background-position: center; z-index: -10;"> 
+            <source src="https://player.vimeo.com/external/323496013.sd.mp4?s=934f61a0432ace6bcec62423e8a4282a4afb82ed&profile_id=164" type="video/mp4">
+        </video>
+    </div>
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0 " >
+        <li class="nav-item" >
+            <a class="nav-link" id="h" aria-current="page" style="color: #f3f3f3; font-size: x-large;"  href="index.html">Home</a>
+          </li>
+      
+      
+       
+      </div>
+      <div class="logo">
+        <img src="sntlogo21 .png" alt="">
+        <h1 class="ml5">
+            <span class="text-wrapper">
+              <span class="line line1"></span>
+              <span class="letters letters-left">Stay</span>
+              <!-- <span class="letters ampersand">&amp;</span> -->
+              <span class="letters letters-right">Tuned</span>
+              <span class="line line2"></span>
+            </span>
+          </h1>
+          
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+          
+    
+    </div>
+    
+</body>
+<script>
+    anime.timeline({loop: true})
+      .add({
+        targets: '.ml5 .line',
+        opacity: [0.5,1],
+        scaleX: [0, 1],
+        easing: "easeInOutExpo",
+        duration: 900
+      }).add({
+        targets: '.ml5 .line',
+        duration: 600,
+        easing: "easeOutExpo",
+        translateY: (el, i) => (-0.625 + 0.625*2*i) + "em"
+      }).add({
+        targets: '.ml5 .ampersand',
+        opacity: [0,1],
+        scaleY: [0.5, 1],
+        easing: "easeOutExpo",
+        duration: 600,
+        offset: '-=600'
+      }).add({
+        targets: '.ml5 .letters-left',
+        opacity: [0,1],
+        translateX: ["0.5em", 0],
+        easing: "easeOutExpo",
+        duration: 600,
+        offset: '-=300'
+      }).add({
+        targets: '.ml5 .letters-right',
+        opacity: [0,1],
+        translateX: ["-0.5em", 0],
+        easing: "easeOutExpo",
+        duration: 600,
+        offset: '-=600'
+      }).add({
+        targets: '.ml5',
+        opacity: 0,
+        duration: 1000,
+        easing: "easeOutExpo",
+        delay: 1500
+      });
+      </script>
+</html>

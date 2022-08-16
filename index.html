@@ -1,0 +1,1024 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <title>S&T</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script>
+        var h = window.innerHeight;
+        var w = window.innerWidth;
+
+    </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+
+    <script src="js/js?id=UA-81222017-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-81222017-1');
+    </script>
+
+    <script src="js/js?id=UA-81222017-1"></script>
+
+    <!-- Icons -->
+    <link rel="stylesheet" type="text/css" href="css/all.min.css">
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            position: relative;
+            height: 100vh;
+            width: 100vw;
+            /*background: black;*/
+            /* background-image : url("2022-02-19\ \(2\).png"); */
+            background-attachment: fixed;
+            background-size: cover;
+
+            /*background: white !important;*/
+            font-family: GothamLight;
+            overflow-x: hidden !important;
+
+        }
+
+        .navgrad {
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+        }
+
+        .gradient {
+            content: '';
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 20%;
+            z-index: 5;
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+        }
+
+        .gradient1 {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 55vw;
+            height: 20vw;
+            width: 100%;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, #000000 100%);
+            z-index: -1;
+        }
+
+        .gradient2 {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 40vw;
+            bottom: 0;
+            height: 20vw;
+            width: 100%;
+            background: linear-gradient(-180deg, rgba(0, 0, 0, 0) 0%, #000 100%);
+            z-index: -1;
+        }
+
+        /* width */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            display: none;
+        }
+
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 3px;
+        }
+
+
+        a:hover {
+            text-decoration: none;
+        }
+
+        #negative {
+            position: absolute;
+            right: 50%;
+            top: 50%;
+            z-index: 500;
+        }
+
+
+
+        /* #myVideo{
+        position:absolute; 
+        float: top;
+        justify-content: center !important;
+        bottom: 0;
+       
+        z-index: -2;
+        background-position: center;
+        background-size: cover;
+       
+        margin-top: 0;
+        max-height: 100vh;
+        width: 100vw;
+    } */
+        #schedule {
+            position: absolute;
+            right: 25%;
+            cursor: pointer;
+            top: 50%;
+            width: 10%;
+            height: 20%;
+            z-index: 500;
+        }
+
+        #landing {
+            background: linear-gradient(180deg, rgba(255, 255, 255, 1) 87.55%, rgba(0, 0, 0, 0.38) 100%);
+            justify-content: center !important;
+        }
+
+        #grass {
+            position: absolute;
+            float: bottom;
+            justify-content: center !important;
+            bottom: 0;
+            border: none;
+            transform: rotateY(180deg);
+            -webkit-transform: rotateY(180deg);
+            /* Safari and Chrome */
+            -moz-transform: rotateY(180deg);
+            /* Firefox */
+            position: fixed;
+            /* background-position: center; */
+            /* background-size: cover; */
+            /* height:100%; */
+            /* width: 100%; */
+            /* float: top; */
+
+            /*top:0;*/
+            width: 100% !important;
+            mix-blend-mode: multiply;
+        }
+
+        @media only screen and (max-width: 1330px) {
+            #schedule {
+                /*display: none;*/
+                position: absolute;
+                right: 25%;
+                cursor: pointer;
+                top: 40%;
+                width: 10%;
+                height: 20%;
+                z-index: 500;
+            }
+
+            /*    #myVideo{*/
+            /*    position:absolute;*/
+            /*    bottom: 0;*/
+            /*    top:0;*/
+            /*    !*right:0;*!*/
+            /*    width: 100% !important;*/
+            /*}*/
+            /* #grass{
+            position:absolute;
+            float: bottom;
+            justify-content: center !important;
+            bottom: 0;
+            border: none;
+
+            transform: rotateY(180deg);
+            -webkit-transform:rotateY(180deg); /* Safari and Chrome *
+            -moz-transform:rotateY(180deg); /* Firefox *
+            /*top:0;*
+
+            mix-blend-mode: multiply !important;
+        }
+         */
+
+        }
+
+        li {
+            list-style: none;
+        }
+
+        #navbar {
+            /*background-color: #333;*/
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 100%;
+            display: inline !important;
+            transition: top 0.3s;
+        }
+
+        .dropdown-menu {
+            /*margin-top: 20px;*/
+            background: rgba(0, 0, 0, 0.75);
+            color: red;
+        }
+
+        .dropdown {
+            z-index: 100;
+
+        }
+
+        #nav-content {
+            color: white;
+            position: fixed;
+            right: 0.1vw;
+            /*top:2.5%;*/
+            transition: top 0.3s;
+            margin-top: 1.1vw;
+        }
+
+        .signin-btn {
+            background: #268AFF;
+            width: 8vw;
+            height: 2vw;
+            padding-top: -15px !important;
+            padding-bottom: 1px;
+            border-radius: 50px;
+            border: 0.5px solid #FFFFFF;
+        }
+
+        .a-signin-btn {
+            /*width:8vw;*/
+            padding-top: -15px !important;
+            /*padding-bottom: 1px;*/
+        }
+
+        #logo {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: inline;
+            transition: top 0.3s;
+
+        }
+
+        #logo-img {
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding-left: 2.9%;
+            padding-top: 1.7%;
+            width: 100%;
+            display: inline;
+            transition: top 0.3s;
+
+        }
+
+        #bottom-nav {
+
+            /*background-color: #333;*/
+            position: fixed;
+            bottom: 0;
+            left: 20%;
+            /*width: 20%;*/
+            display: block;
+            transition: bottom 0.3s;
+        }
+
+        #notif {
+            /*display: none;*/
+            bottom: 0;
+
+            position: fixed;
+            /*bottom: 5%;*/
+            left: 35%;
+            /*width: 20%;*/
+            display: block;
+            transition: bottom 0.3s;
+        }
+
+        #left-nav {
+            /*background-color: #333;*/
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            /*width: 20%;*/
+            display: block;
+            transition: left 0.3s;
+        }
+
+        #left-nav-content {
+
+            position: fixed;
+            bottom: 0.5%;
+            left: 0;
+            /*width: 20%;*/
+            display: block;
+            transition: left 0.3s;
+        }
+
+        #right-nav {
+            /*background-color: #333;*/
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            /*width: 20%;*/
+            display: block;
+            transition: right 0.3s;
+        }
+
+        #right-nav-content {
+            /*background-color: #333;*/
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            padding-right: 2vw;
+
+            /*margin-left: 1vw;*/
+            /*width: 20%;*/
+            display: block;
+            transition: right 0.3s;
+        }
+
+        @media only screen and (max-width: 1200px) {
+            #right-nav-content {
+                padding-right: 1vw;
+            }
+        }
+
+        #navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            margin-top: 5px;
+            text-decoration: none;
+            /*font-size: 1rem;*/
+        }
+
+        #left-nav-content a {
+            float: left;
+            display: block;
+            color: #fff;
+            margin-left: 4vw;
+            text-align: center;
+            padding-top: 15px;
+            text-decoration: none;
+            /*font-size: 1rem;*/
+        }
+
+
+        /*Home Page below landing*/
+        .home-content {
+            /*width: 100%;*/
+            position: absolute;
+            right: 0;
+            margin-top: 50%;
+            left: 0;
+
+
+
+            /*margin-right: -17px !important;*/
+            z-index: -1;
+
+            /*background-position: center;*/
+            /*background-attachment: fixed;*/
+        }
+
+        .ht {
+            font-family: euro;
+            letter-spacing: 1px;
+            padding-top: 80px;
+        }
+
+        .img-col {
+            width: 220px !important;
+            height: 220px !important;
+            margin-right: 50px;
+        }
+
+        .home-img {
+            width: 100%;
+            /*height: 100%;*/
+            border: 0.5px solid white;
+            border-radius: 5px;
+        }
+
+        .centered {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            color: #fff;
+            font-family: euro;
+            letter-spacing: 1px;
+            font-size: 2.5vw;
+            transform: translate(-50%, -50%);
+        }
+
+        .hp {
+            font-size: 1.2vw;
+            padding-top: 1vw;
+        }
+
+        #view {
+            font-family: euro;
+            letter-spacing: 0.5px;
+            /*padding-top: 2vw;*/
+        }
+
+        .glitch {
+            /*position: relative;*/
+            color: white;
+            font-size: 1.5vw;
+            font-family: euro;
+            letter-spacing: 2px;
+            /* Animation provies a slight random skew. Check bottom of doc for more information on how to random skew. */
+            animation: glitch-skew 1s infinite linear alternate-reverse;
+        }
+
+        .glitch::before {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            left: 2px;
+            text-shadow: -2px 0 #ff00c1;
+            /* Creates an initial clip for our glitch. This works in a typical top,right,bottom,left fashion and creates a mask to only show a certain part of the glitch at a time. */
+            clip: rect(44px, 450px, 56px, 0);
+            /* Runs our glitch-anim defined below to run in a 5s loop, infinitely, with an alternating animation to keep things fresh. */
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+
+        .glitch::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            left: -2px;
+            text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+            animation: glitch-anim2 1s infinite linear alternate-reverse;
+        }
+
+        /* Creates an animation with 20 steaps. For each step, it calculates a percentage for the specific step. It then generates a random clip box to be used for the random glitch effect. Also adds a very subtle skew to change the 'thickness' of the glitch.*/
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- <div id="landing" style="align-content:center; width: 100%; "> -->
+    <!-- <a href="https://techfest.org/schedule" id="schedule"> </a> -->
+
+    <video muted autoplay loop id="myV">
+        <source style="align-content:center;" src="Midnight-Eden-City-Live-Wallpaper.mp4" type="video/mp4">
+    </video>
+
+    <div class="gradient1"></div>
+    <div class="gradient2"></div>
+    <video muted autoplay loop id="videoBG" style="background-position: center; z-index: -10;">
+        <source src="Pexels Videos 1851190_2.mp4" type="video/mp4">
+    </video>
+    <!-- <div class="gradient1"></div>
+    <div class="gradient2"></div> -->
+
+
+    <!-- </div> -->
+    <!-- <nav style="font-family: euro;letter-spacing: 1.5px;font-size: 1.3vw!important;">
+
+    <!-- <a href="/">
+        <img id="logo-img" style="z-index: 10;width:23%;float:left;" src=imgs/logo.svg alt="TF LOGO">
+    </a> -->
+    <!-- <div class="navgrad" id="logo">
+            <img id="nav-img" style="width:31.25%;float:left;" src=imgs/Logo.svg alt="Logo">
+        </div>   -->
+
+
+
+    <!-- END FOOTER----------------------------------------------------------------------------------------------------------------------------------------- -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+    </style>
+
+    <!-- -------------------------------------------------------------------------------- -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent-fixed"
+        style="font-family:'Bangers', cursive; color: #f3f3f3; font-size: x-large;">
+        <!-- <a class="navbar-brand" href="#" style="color: #f3f3f3; font-size: x-large;">Home</a> -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+            aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation"
+            style="color:#f3f3f3 ; background-color: #f2f2f2;">
+            <span class="navbar-toggler-icon" style="color:#f3f3f3 ;background-color: #f1f1f1;"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown" style="color:#f3f3f3  ;">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html" style="color: #f3f3f3; font-size: x-large;">Home <span
+                            class="sr-only">(current)</span></a>
+                </li>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#division" id="navbarDropdownMenuLink"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+                        style="color: #f3f3f3; font-size: x-large;">
+                        Division
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#"
+                            style="color: rgb(181, 177, 177); font-size: x-large;">Tinkering</a>
+                        <a class="dropdown-item" href="#"
+                            style="color:rgb(181, 177, 177); font-size: x-large; ">KOde</a>
+                        <a class="dropdown-item" href="#"
+                            style="color:rgb(181, 177, 177); font-size: x-large;">E-cell</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#abt" style="color: #f3f3f3; font-size: x-large;">About-us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="event.html" style="color: #f3f3f3; font-size: x-large;">Event</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="urj.html" style="color: #f3f3f3; font-size: x-large;">Urjotsav</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#" style="color: #f3f3f3; font-size: x-large;">Winter School</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact" style="color: #f3f3f3; font-size: x-large;">Contact-us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!-- ------------------------------------------------------------------------------------------ -->
+
+
+    <!-- <video muted autoplay loop id="myV" onclick="music()">
+    <source style="align-content:center;" src="Midnight-Eden-City-Live-Wallpaper.mp4" type="video/mp4">
+</video> -->
+    <!--  -->
+
+
+    <div class="logo">
+        <img src="sntlogo21 .png" alt="" onclick="music()">
+        <h1 class="ml5">
+            <span class="text-wrapper">
+                <span class="line line1"></span>
+                <span class="letters letters-left">Science</span>
+                <span class="letters ampersand">&amp;</span>
+                <span class="letters letters-right">Technical Council</span>
+                <span class="line line2"></span>
+            </span>
+        </h1>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+
+    </div>
+
+
+
+
+
+
+
+    <!-- ---------------------------------------------------------------------------- -->
+
+    <div class="home-content" >
+
+        <div class="gradient">
+
+        </div>
+         <!-- <video muted autoplay loop id="myVi">
+                    <source style="align-content:center;" src="Pexels Videos 4577.mp4" type="video/mp4">
+                </video> -->
+        <div class="container"  >
+            <div style="margin-top: 3vw;" class="">
+                <div class="col-md-12">
+                    <h1 id ="ov" class="text-center text-white ht"
+                        style="font-size: 5vw; text-shadow: 1.5vw 1.5vw 1.5vw black; opacity: 0.8;">Our Vision</h1>
+                </div>
+                <div style="margin-top: 2vw; " class="col-md-12">
+                    <h3 style="margin-top: 2vw; font-size: 2vw; text-shadow: 0.5vw .5vw .5vw black ; color:whitesmoke;"
+                        class=" text-center" data-aos="flip-right" data-aos-easing="ease-out-cubic"
+                        data-aos-duration="2000">At the Science and Technical Council, we encourage the students at the
+                        institute to utilize their potential and carve the best out of themselves when it comes to the
+                        practical application of the technological concepts they learn.</h3>
+                </div>
+               
+
+
+
+
+                <!-- <video muted autoplay loop id="myVi">
+                    <source style="align-content:center;" src="Pexels Videos 4577.mp4" type="video/mp4">
+                </video> -->
+                <div id="division">
+
+                    <p class="dhead">Division</p>
+                </div>
+                <div class="bttn" data-aos="flip-right" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+
+                    <div class="btn">
+                        <ul>
+                            <li class="bt">
+                                <p onmouseover="f1()" onmouseleave="f2()"><a href="#">Tinkering</a></p>
+                                <div class="para" id="tinkering" onmouseover="f1()" onmouseleave="f2()">Tinkering Lab
+                                    was begun to inculcate technical hobby hands in institute students . The Tinkering
+                                    Lab offers the space and co-ordinations for individuals to team up and transform
+                                    thoughts into items<a href="">more</a>
+                                </div>
+                            </li>
+                            <li class="bt">
+                                <p onmouseover="f3()" onmouseleave="f4()"> <a href="#"> Kode</a> </p>
+                                <div class="para" id="kode" onmouseover="f3()" onmouseleave="f4()">We conduct sessions
+                                    for relevant software & programming languages .Kode Club additionally tutors and
+                                    subsidizes S&T Projects and deals with planning and fostering institute's interior
+                                    applications <a href="">more</a>.
+                                </div>
+                            </li>
+                            <li class="bt">
+                                <p onmouseover="f5()" onmouseleave="f6()"> <a href="#"> E-Cell</a> </p>
+                                <div class="para" id="ecell" onmouseover="f5()" onmouseleave="f6()"> Business venture
+                                    cell RGIPT is an association that capacities to help and work with Industrial and
+                                    business adaption of innovations and thoughts that can make a positive change in our
+                                    general public <a href="">more</a>.
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+
+            <div id="abth">
+                <p class="ahead">About-Us</p>
+            </div>
+            <div id="abt" class="det" data-aos="flip-right" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+
+                <p class="para1">The institute aims to promote technological growth and education by inculcating the
+                    spirit of developing conceptual understanding and ingeniously innovating. It is not possible unless
+                    the students work right from the base discovering every step to the eventual implementation of the
+                    technological enactments they learn in the classrooms and witness around them. The minds of the
+                    students are always full of new ideas and propositions and the institute is devoted to providing a
+                    supportive platform to aid the students to realize and execute them. The Science and Technical
+                    council at the institute is the celebrated step in this direction. It provides the students with the
+                    necessary resources,
+                    guidance, and environment to inculcate the technical understanding to the depth through its
+                    activities and is consistently
+                    assisting the institute to realize its vision and aims. <br /> The technology runs on the wheels of
+                    innovation. Every innovation begins with a simple idea or a thought. The Science and technical
+                    council gives wings to those ideas and aspirations of the students through numerous steps ranging
+                    from bracing their projects and providing a progressive working environment to holding up their
+                    participation at various competitions, contests, and fests. So, we aim to support our students excel
+                    and keep growing just like the sunshine to the saplings.</p>
+            </div>
+            <div>
+
+
+
+
+                <div id="contact" class="cnt">
+                    <p class="ahead">Contact-us</p>
+                    <div id="contact1" data-aos="flip-right" data-aos-easing="ease-out-cubic" data-aos-duration="2000">
+
+
+                        <!-- <p class="cntno"> <i>abc@gmial.com</p></i> -->
+                        <!-- <audio id="audio" autoplay loop  > <source src ="Midnight-Eden-City-Live-Wallpaper (audio-extractor.net).mp3"> type="audio/mp3" </audio> -->
+
+
+                        <div class="icons">
+                            <ul>
+                                <li class="icon"><a href="google.com"></a><img src="instagram-icon.png"></li>
+                                <li class="icon"><a href=""></a><img src="linkedin-icon.png"> </li>
+                                <li class="icon"><a href=""></a><img src="facebook-icon.png"> </li>
+                                <li class="icon"><a href=""></a><img src="google-mail-logo.png"> </li>
+                            </ul>
+                        </div>
+                        <div class="mapouter" style="width: 100%;  ">
+                            <div class="gmap_canvas" style=" position: absolute;"><iframe width="50%" height="242"
+                                    id="gmap_canvas"
+                                    src="https://maps.google.com/maps?q=rgipt&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                                    frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a
+                                    href="https://putlocker-is.org"></a><br>
+                                <style>
+                                    .mapouter {
+                                        position: relative;
+                                        text-align: center;
+                                        height: 15vw;
+                                        width: 70%;
+                                        margin: 2vw;
+                                    }
+                                </style><a href="https://www.embedgooglemap.net">embedded maps</a>
+                                <style>
+                                    .gmap_canvas {
+                                        overflow: hidden;
+                                        background: none !important;
+                                        height: 15vw;
+                                        width: 90%;
+                                    }
+                                </style>
+                            </div>
+                        </div>
+                        <div class="navbar navbar-inverse navbar-fixed-bottom">
+                        </div>
+
+                        <div class="container">
+
+                            <p class="navbar-text"
+                                style="text-align: center; align-items: center; font-size: 0.9vw; color: white; margin-left:2vw; padding-left: 5vw;  ">
+                                <i> Copyright © 2022 S&T council RGIPT. All rights reserved.</i> </p>
+
+
+                            <p style="color: white; font-size: large;">Efforts made by Rishu Raj Sinha </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script src="js/jquery-3.5.1.min.js"></script>
+            <script src="js/popper.min.js"></script>
+            <script src="js/bootstrap.min.js"></script>
+            <script src="js/particles.min.js"></script>
+            <script type="text/javascript">
+                function music() {
+                    document.getElementById("audio").play();
+                }
+                window.onscroll = function () {
+                    document.getElementById("audio").play();
+                }
+
+
+                function reloadP() {
+                    document.location.reload();
+                    music();
+                }
+
+// <button onclick: "reloadP()">Click</button>
+            </script>
+            <script>
+//     window.onresize = function(event)
+//     {
+//         document.location.reload(true);
+//     }
+
+//     var h = window.innerHeight;
+//     var w = window.innerWidth
+//     if(w/h<1.92){
+//         var shift = (1.92*h - w)/2
+//         $('#myVideo').css('margin-left',-shift);
+//         $('#myVideo').css('height','100%');
+//         $('#myVideo').css('min-width','100%');
+//         $('#myVideo').css('max-width','200%');
+//         $('#lights').css('margin-left',-shift);
+//         $('#lights').css('height','100%');
+//         $('#lights').css('min-width','100%');
+//         $('#lights').css('max-width','200%');
+//         $('#grass').css('margin-left',-shift);
+//         $('#grass').css('height','100%');
+//         $('#grass').css('min-width','100%');
+//         $('#grass').css('max-width','200%');
+
+//     }else{
+//         $('#myVideo').css('width','100%');
+//         $('#lights').css('width','100%');
+//         $('#grass').css('width','100%');
+
+//     }
+            </script>
+            <script>
+                $(document).ready(function () {
+
+                    var video = document.getElementById('myVideo');
+                    video.addEventListener("canplay", function () {
+                        setTimeout(function () {
+                            video.play();
+                        }, 2000);
+                    });
+                });
+                var intervalRewind;
+                $(video).on('play', function () {
+                    video.playbackRate = 1.0;
+                    clearInterval(intervalRewind);
+                });
+                $(video).on('pause', function () {
+                    video.playbackRate = 1.0;
+                    clearInterval(intervalRewind);
+                });
+
+                $("#negative").click(function () { // button function for rewind
+                    intervalRewind = setInterval(function () {
+                        video.playbackRate = 1;
+                        if (video.currentTime == 0) {
+                            clearInterval(intervalRewind);
+                            video.pause();
+                        }
+                        else {
+                            video.currentTime += -.1;
+                        }
+                    }, 30);
+                });
+            </script>
+            <script>
+
+    // var prevScrollpos = window.pageYOffset;
+    // console.log(prevScrollpos);
+
+    // window.onscroll = function() {
+    //     var currentScrollPos = window.pageYOffset;
+    //     if (prevScrollpos > currentScrollPos) {
+    //         document.getElementById("navbar").style.top = "0";
+    //         document.getElementById("nav-content").style.top = "0";
+    //         document.getElementById("logo").style.top = "0";
+    //         document.getElementById("logo-img").style.top = "0";
+    //         document.getElementById("bottom-nav").style.bottom = "0";
+    //         document.getElementById("notif").style.bottom = "0";
+    //         document.getElementById("right-nav").style.right = "0";
+    //         document.getElementById("right-nav-content").style.right = "0";
+    //         document.getElementById("left-nav").style.left = "0";
+    //         document.getElementById("left-nav-content").style.left = "0";
+
+    //     } else {
+    //         document.getElementById("navbar").style.top = "-100px";
+    //         document.getElementById("nav-content").style.top = "-100px";
+    //         document.getElementById("logo").style.top = "-130px";
+    //         document.getElementById("logo-img").style.top = "-100px";
+    //         document.getElementById("bottom-nav").style.bottom = "-100px";
+    //         document.getElementById("notif").style.bottom = "-100px";
+    //         document.getElementById("right-nav").style.right = "-500px";
+    //         document.getElementById("right-nav-content").style.right = "-500px";
+    //         document.getElementById("left-nav").style.left = "-500px";
+    //         document.getElementById("left-nav-content").style.left = "-500px";
+
+    //     }
+    //     prevScrollpos = currentScrollPos;}
+            </script>
+            <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+            <script>
+
+                AOS.init({
+                    offset: 120,
+                    duration: 400,
+                });
+
+            </script>
+
+            <script>
+                $(document).ready(function () {
+
+                    $('.dropdown').hover(function () {
+                        $(this).find('.dropdown-menu').first().stop().slideDown(150);
+                    }, function () {
+                        $(this).find('.dropdown-menu').first().stop().slideUp(105)
+                    });
+                });
+
+            </script>
+            <script type="text/javascript">
+                // h1.addEventListner('mouseenter' ,() =>h1.innertext ="rishu raj");
+                function f1() {
+                    document.getElementById("tinkering").style.opacity = "1";
+                    document.getElementById("tinkering").style.backgroundColor = "black"
+                }
+                function f2() {
+                    document.getElementById("tinkering").style.opacity = "0.5";
+                }
+                function f3() {
+                    document.getElementById("kode").style.opacity = "1";
+                    document.getElementById("kode").style.backgroundColor = "black";
+                }
+                function f4() {
+                    document.getElementById("kode").style.opacity = "0.5";
+                }
+                function f5() {
+                    document.getElementById("ecell").style.opacity = "1";
+                    document.getElementById("ecell").style.backgroundColor = "black"
+                }
+                function f6() {
+                    document.getElementById("ecell").style.opacity = "0.5";
+                }
+
+
+
+            </script>
+
+</body>
+
+
+
+
+
+<script>
+    anime.timeline({ loop: true })
+        .add({
+            targets: '.ml5 .line',
+            opacity: [0.5, 1],
+            scaleX: [0, 1],
+            easing: "easeInOutExpo",
+            duration: 900
+        }).add({
+            targets: '.ml5 .line',
+            duration: 600,
+            easing: "easeOutExpo",
+            translateY: (el, i) => (-0.625 + 0.625 * 2 * i) + "em"
+        }).add({
+            targets: '.ml5 .ampersand',
+            opacity: [0, 1],
+            scaleY: [0.5, 1],
+            easing: "easeOutExpo",
+            duration: 600,
+            offset: '-=600'
+        }).add({
+            targets: '.ml5 .letters-left',
+            opacity: [0, 1],
+            translateX: ["0.5em", 0],
+            easing: "easeOutExpo",
+            duration: 600,
+            offset: '-=300'
+        }).add({
+            targets: '.ml5 .letters-right',
+            opacity: [0, 1],
+            translateX: ["-0.5em", 0],
+            easing: "easeOutExpo",
+            duration: 600,
+            offset: '-=600'
+        }).add({
+            targets: '.ml5',
+            opacity: 0,
+            duration: 1000,
+            easing: "easeOutExpo",
+            delay: 1500
+        });
+</script>
+<script>
+    let tl =gsap.timeline({
+      scrollTrigger:{
+        trigger: "#division",
+        pin: true,   // pin the trigger element while active
+    start: "top top", // when the top of the trigger hits the top of the viewport
+    end: "+=500", // end after scrolling 500px beyond the start
+        scrub:0.7,
+      },
+    //   y:-500
+    snap: {
+      snapTo: "labels", // snap to the closest label in the timeline
+      duration: {min: 0.2, max: 3}, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
+      delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the snapping
+      ease: "power1.inOut" // the ease of the snap animation ("power3" by default)
+    
+    }});
+    tl.addLabel("start")
+.from("#division", {scale: 0.3,  autoAlpha: 0})
+// .addLabel("color").from(".btn",{backgroundColor:"black" ,rotateY:-90})
+
+  </script>
+  <script>
+    let tl1 =gsap.timeline({
+      scrollTrigger:{
+        trigger: "#ov",
+        pin: true,   // pin the trigger element while active
+    start: "top top", // when the top of the trigger hits the top of the viewport
+    end: "+=150", // end after scrolling 500px beyond the start
+        scrub:0.5,
+      },
+    //   y:-500
+    snap: {
+      snapTo: "labels", // snap to the closest label in the timeline
+      duration: {min: 0.2, max: 3}, // the snap animation should be at least 0.2 seconds, but no more than 3 seconds (determined by velocity)
+      delay: 0.2, // wait 0.2 seconds from the last scroll event before doing the snapping
+      ease: "power1.inOut" // the ease of the snap animation ("power3" by default)
+    
+    }});
+    tl1.addLabel("start")
+.from("#ov", {scale: 0.3 , autoAlpha: 0})
+
+
+  </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
+
+<!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+       -->
+
+</html>
